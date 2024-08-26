@@ -2,6 +2,7 @@ let Dateipt = document.querySelector('.DateInput');
 let FindBtn = document.querySelector('.FindButton');
 let DisplayResult = document.querySelector('.DayDisplay');
 let GivenDis = document.querySelector('.GivenDis');
+let ErrorDis = document.querySelector('.Error');
 
 FindBtn.addEventListener('click', () => {
   let Dateval = Dateipt.value;
@@ -11,34 +12,37 @@ FindBtn.addEventListener('click', () => {
   let Givendate = date.getDate();
 
   if(Dateval == null || Dateval == ''){
-    alert('Enter a date');
+    ErrorDis.innerHTML = `Enter a Date`;
+    setTimeout(() => {
+      ErrorDis.innerHTML = ``;
+    },3000);
   }
 
   else if(day == 0){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Sunday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Sunday !`;
   }
   
   else if(day == 1){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Monday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Monday !`;
   }
   
   else if(day == 2){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Tuesday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Tuesday !`;
   }
   
   else if(day == 3){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Wednesday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Wednesday !`;
   }
   
   else if(day == 4){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Thursday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Thursday !`;
   }
   
   else if(day == 5){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Friday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Friday !`;
   }
   
   else if(day == 6){
-    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Saturday`;
+    DisplayResult.innerHTML = `${Givendate}<sup>th</sup> is Saturday !`;
   }
 });
